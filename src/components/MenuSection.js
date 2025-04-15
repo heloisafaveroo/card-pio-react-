@@ -1,17 +1,14 @@
+// src/components/MenuSection.js
 import React from 'react';
+import MenuItem from './MenuItem';
 
-function MenuSection({ id, title, items }) {
+function MenuSection({ title, items }) {
   return (
     <>
       <h2>{title}</h2>
-      <section id={id}>
-        {items.map(item => (
-          <article key={item.id}>
-            <img src={item.image} alt={item.name} />
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            <p><strong>{item.price}</strong></p>
-          </article>
+      <section id={title.toLowerCase().replace(' ', '-')}>
+        {items.map((item, index) => (
+          <MenuItem key={index} item={item} />
         ))}
       </section>
     </>
