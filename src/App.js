@@ -1,12 +1,13 @@
-// src/App.js
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import MenuSection from './components/MenuSection';
-import Footer from './components/Footer';
-import './index.css'; // Import the main index.css for global styles
-import './styles.css'; // Import the provided styles.css
+import './index.css';
+import './styles.css';
 import data from './data';
+
+// Importa o componente Footer dinamicamente
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <MenuSection title="Sobremesas" items={data.sobremesas} />
         <MenuSection title="Bebidas" items={data.bebidas} />
       </main>
-      <Footer />
+      <Suspense fallback={<div>Carregando o rodapé...</div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
