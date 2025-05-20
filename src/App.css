@@ -4,6 +4,7 @@ body {
   margin: 0;
 }
 
+
 /* Estilos para o cabeçalho da página */
 header {
   background-color: rgb(163, 25, 25);
@@ -190,4 +191,13 @@ footer {
   nav ul li a {
       font-size: 20px;
   }
+}
+/* Em src/App.css ou styles.css */
+@font-face {
+  font-family: 'MinhaFonteCustomizada';
+  src: url('/fonts/minhafonte.woff2') format('woff2'),
+       url('/fonts/minhafonte.woff') format('woff'); /* Adicione fallbacks se tiver */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Mantenha isso para evitar FOIT */
 }
