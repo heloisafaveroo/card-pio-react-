@@ -4,6 +4,15 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  src: url("fonts/bonita.ttf") format("ttf"); /* etc. */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* Estilos para o cabeçalho da página */
 header {
   background-color: rgb(163, 25, 25);
